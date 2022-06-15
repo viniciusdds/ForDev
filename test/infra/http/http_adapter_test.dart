@@ -19,7 +19,7 @@ void main(){
   setUp((){
     client = ClientSpy();
     sut = HttpAdapter(client);
-    url = faker.internet.httpsUrl();
+    url = faker.internet.httpsUrl(); //teste
   });
 
   group('shared',(){
