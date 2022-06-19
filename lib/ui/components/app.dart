@@ -4,6 +4,9 @@ import 'package:flutter/services.dart';
 import '../pages/pages.dart';
 
 class App extends StatelessWidget {
+
+  LoginPresenter? presenter;
+
   @override
   Widget build(BuildContext context) {
 
@@ -58,7 +61,7 @@ class App extends StatelessWidget {
           )
         )
       ),
-      home: LoginPage(),
+      home: LoginPage(presenter!),
     );
   }
 }
