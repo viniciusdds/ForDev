@@ -3,13 +3,12 @@
 import 'dart:async';
 
 import 'package:faker/faker.dart';
+import 'package:fordev/presentation/protocols/validation.dart';
 import 'package:meta/meta.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-abstract class Validation {
-  String validate({@required String field, @required String value});
-}
+
 
 class LoginState {
   String emailError;
