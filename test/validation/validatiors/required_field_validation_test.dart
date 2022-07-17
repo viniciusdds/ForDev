@@ -1,9 +1,11 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
 abstract class FieldValidation {
   String get field;
-  String? validate(String value);
+  String validate(String value);
 }
 
 class RequiredFieldValidation implements FieldValidation {
@@ -11,25 +13,23 @@ class RequiredFieldValidation implements FieldValidation {
 
   RequiredFieldValidation(this.field);
 
-  String? validate(String? value){
-      return value!.isEmpty ? 'Campo obrigatório' : null;
+  String  validate(String value){
+      return value.isEmpty ? 'Campo obrigatório' : null;
   }
 }
 
 void main() {
-  test('Should return null if value is not empty', (){
-      final sut = RequiredFieldValidation('any_field');
+  RequiredFieldValidation sut;
 
-      final error = sut.validate('any_value');
-      
-      expect(error, null);
+  setUp((){
+    sut = RequiredFieldValidation('any_field');
+  });
+
+  test('Should return null if value is not empty', (){
+      expect(sut.validate('any_value'), null);
   });
 
   test('Should return error if value is not empty', (){
-    final sut = RequiredFieldValidation('any_field');
-
-    final error = sut.validate('');
-
-    expect(error, 'Campo obrigatório');
+    expect( sut.validate(''), 'Campo obrigatório');
   });
 }
