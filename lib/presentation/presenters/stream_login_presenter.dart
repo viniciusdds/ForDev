@@ -5,9 +5,9 @@
 
 import 'dart:async';
 
-import 'package:fordev/domain/helpers/domain_error.dart';
 import 'package:meta/meta.dart';
 
+import 'package:fordev/domain/helpers/helpers.dart';
 import 'package:fordev/domain/usecases/usecases.dart';
 
 import '../protocols/protocols.dart';
