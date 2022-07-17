@@ -66,7 +66,7 @@ class StreamLoginPresenter {
   }
 
   void dispose(){
-    _controller.close();
+    _controller?.close();
     _controller = null;
   }
 }
