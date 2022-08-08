@@ -1,5 +1,3 @@
-// @dart=2.9
-
 import '../protocols/protocols.dart';
 
 class EmailValidation implements FieldValidation {
@@ -9,7 +7,7 @@ class EmailValidation implements FieldValidation {
 
   String validate(String value){
     final regex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    final isValid = value?.isNotEmpty != true || regex.hasMatch(value);
-    return isValid ? null : 'Campo inválido';
+    final isValid = value.isNotEmpty != true || regex.hasMatch(value);
+    return isValid ? "" : 'Campo inválido';
   }
 }

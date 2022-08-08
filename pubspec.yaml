@@ -37,6 +37,7 @@ dependencies:
   http: any
   provider: any
   equatable: any
+  get: any
 
 dev_dependencies:
   flutter_test:

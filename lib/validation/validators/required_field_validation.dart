@@ -1,5 +1,3 @@
-// @dart=2.9
-
 import 'package:fordev/validation/protocols/protocols.dart';
 
 class RequiredFieldValidation implements FieldValidation {
@@ -7,7 +5,7 @@ class RequiredFieldValidation implements FieldValidation {
 
   RequiredFieldValidation(this.field);
 
-  String  validate(String value){
-    return value?.isNotEmpty == true ? null  : 'Campo obrigatório';
+  String validate(String value){
+    return value.isNotEmpty == true ? ""  : 'Campo obrigatório';
   }
 }
